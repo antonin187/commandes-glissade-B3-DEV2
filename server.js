@@ -13,12 +13,12 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(
-    "mongodb+srv://invite:guest@cluster0.o82caff.mongodb.net/Glissade?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  );
+  "mongodb+srv://invite:guest@cluster0.o82caff.mongodb.net/Glissade?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 const commandeSchema = new mongoose.Schema({
   date: String,
@@ -73,7 +73,20 @@ const Commandes = mongoose.model("Commandes", commandeSchema);
 app.get("/commandes", async (req, res) => {
   try {
     const commandes = await Commandes.find({});
-      res.send(commandes);
+    res.send(commandes);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send(err);
+  }
+});
+
+app.get("/commandes/outOf/:pays", async (req, res) => {
+  let pays = req.params.pays;
+  try {
+    const commandes = await Commandes.find({
+      "adresseLivraison.pays": { $ne: `${pays}` },
+    });
+    res.send(commandes);
   } catch (err) {
     console.error(err);
     res.status(500).send(err);

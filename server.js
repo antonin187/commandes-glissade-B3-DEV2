@@ -106,6 +106,19 @@ app.get("/commandes/:id/articles", async (req, res) => {
   }
 });
 
+app.get("/commandes/outOf/:pays", async (req, res) => {
+  let pays = req.params.pays;
+  try {
+    const commandes = await Commandes.find({
+      "adresseLivraison.pays": { $ne: `${pays}` },
+    });
+    res.send(commandes);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send(err);
+  }
+});
+
 app.listen(port, () => {
   console.log("Server app listening on port " + port);
 });

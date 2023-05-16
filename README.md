@@ -16,7 +16,7 @@ Et ensuite lancez le serveur avec la commande :
     npm start
 ```
 
-VOus pourrez ensuite consulter la documentation de l'API sur l'adresse : http://localhost:8000/api-docs/
+Vous pourrez ensuite consulter la documentation de l'API sur l'adresse : http://localhost:8000/api-docs/
 
 Merci ! 😉
 

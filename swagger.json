@@ -315,8 +315,50 @@
               }
             }
           }
+      },
+      "/commandes/{id}/articles": {
+        "get": {
+            "summary": "Récupérer les articles d'une commande en fonction de son ID",
+            "parameters": [{
+                "name": "id",
+                "in": "path",
+                "description": "ID de la commande",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            }],
+            "responses": {
+                "200": {
+                  "description": "Liste des articles de la commande",
+                  "content": {
+                    "application/json": {
+                        "example": {
+                            "articles": [
+                                {
+                                    "vendeur": {
+                                        "nom": "Lucie Dupont",
+                                        "email": "luciedupont@example.com",
+                                        "telephone": "0676543210"
+                                    },
+                                    "_id": "64634b0579e7c4feeca5a060",
+                                    "reference": "SKU005",
+                                    "nom": "Skateboard électrique",
+                                    "description": "Un skateboard électrique performant et facile à utiliser",
+                                    "prix": 399,
+                                    "quantité": 1,
+                                    "etat": "neuf"
+                                }
+                            ]
+                        }
+                    }
+                  }
+                }
+              }
+
         }
       }
     }
   }
+}
 }

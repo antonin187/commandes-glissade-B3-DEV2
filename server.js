@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const { ObjectId } = require('mongoose').Types;
+
 
 const app = express();
 const port = process.env.PORT || 8000;
@@ -74,6 +76,30 @@ app.get("/commandes", async (req, res) => {
   try {
     const commandes = await Commandes.find({});
     res.send(commandes);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send(err);
+  }
+});
+
+app.get("/expensives", async (req, res) => {
+  try {
+    const commandes = await Commandes.find({ totalTTC: { $gt: 200 } });
+    res.send(commandes);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send(err);
+  }
+});
+
+app.get("/commandes/:id/articles", async (req, res) => {
+  let id = req.params.id;
+  try {
+    const articles = await Commandes.findOne(
+      { _id: new ObjectId(id) }, // Utilisez la variable 'id' pour filtrer par l'ID dynamiquement
+      { _id: 0, articles: 1 }
+    );
+    res.send(articles);
   } catch (err) {
     console.error(err);
     res.status(500).send(err);

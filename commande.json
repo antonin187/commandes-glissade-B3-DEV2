@@ -1,0 +1,56 @@
+{
+    "date": "2023-05-16T10:30:00",
+    "acheteur": {
+      "nom": "John Doe",
+      "email": "johndoe@example.com",
+      "adresse": {
+        "rue": "123 Main Street",
+        "ville": "City",
+        "pays": "Country",
+        "zipCode": "12345"
+      },
+      "telephone": "0607080910"
+    },
+    "adresseLivraison": {
+      "rue": "456 Shipping Street",
+      "ville": "City",
+      "pays": "Country",
+      "zipCode": "67890"
+    },
+    "articles": [
+      {
+        "reference": "SKU001",
+        "nom": "Snowboard",
+        "description": "A high-quality snowboard for all skill levels",
+        "prix": 150.00,
+        "quantité": 1,
+        "etat": "used",
+        "vendeur": {
+          "nom": "Jane Smith",
+          "email": "janesmith@example.com",
+          "telephone": "0610111213"
+        }
+      },
+      {
+        "reference": "SKU002",
+        "nom": "Ski boots",
+        "description": "Comfortable ski boots suitable for all terrains",
+        "prix": 80.00,
+        "quantité": 2,
+        "etats": "used",
+        "vendeur": {
+          "nom": "Mark Johnson",
+          "email": "markjohnson@example.com",
+          "telephone": "0620212223"
+        }
+      }
+    ],
+    "totalHT": 310.00,
+    "fraisDePort": 20.00,
+    "reduction": 0.00,
+    "taxe": 37.20,
+    "totalTTC": 367.20,
+    "modePaiement": "credit_card",
+    "statut": "pending"
+  }
+  

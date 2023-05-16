@@ -5,12 +5,222 @@
       "version": "1.0.0"
     },
     "paths": {
-      "/users": {
+      "/commandes": {
         "get": {
-          "summary": "Récupérer tous les utilisateurs",
+          "summary": "Récupérer toutes les commandes",
           "responses": {
             "200": {
-              "description": "Liste des utilisateurs"
+              "description": "Liste des commandes",
+              "content": {
+                "application/json": {
+                    "example": [
+                        {
+                            "acheteur": {
+                                "adresse": {
+                                    "rue": "789 Elm Street",
+                                    "ville": "Bordeaux",
+                                    "pays": "France",
+                                    "zipCode": "54321"
+                                },
+                                "nom": "Alice Johnson",
+                                "email": "alicejohnson@example.com",
+                                "telephone": "0630314151"
+                            },
+                            "adresseLivraison": {
+                                "rue": "321 route du bonheur",
+                                "ville": "Soulac",
+                                "pays": "France",
+                                "zipCode": "33780"
+                            },
+                            "_id": "64633b4e76bb673747dd7321",
+                            "date": "2023-05-16T11:45:00",
+                            "articles": [
+                                {
+                                    "vendeur": {
+                                        "nom": "David Wilson",
+                                        "email": "davidwilson@example.com",
+                                        "telephone": "0640414243"
+                                    },
+                                    "_id": "64633b58aad96045cbf8a31f",
+                                    "reference": "SKU003",
+                                    "nom": "Planche de surf 7.6",
+                                    "description": "A lightweight and durable tennis racket",
+                                    "prix": 75,
+                                    "quantité": 2,
+                                    "etat": "occasion, aucun footstrap"
+                                }
+                            ],
+                            "totalHT": 150,
+                            "fraisDePort": 10,
+                            "reduction": 5,
+                            "taxe": 18,
+                            "totalTTC": 173,
+                            "modePaiement": "paypal",
+                            "statut": "pending"
+                        },
+                        {
+                            "acheteur": {
+                                "adresse": {
+                                    "rue": "456 Oak Avenue",
+                                    "ville": "Marseille",
+                                    "pays": "France",
+                                    "zipCode": "12345"
+                                },
+                                "nom": "Thomas Anderson",
+                                "email": "thomasanderson@example.com",
+                                "telephone": "0620202020"
+                            },
+                            "adresseLivraison": {
+                                "rue": "789 Beach Boulevard",
+                                "ville": "Nice",
+                                "pays": "France",
+                                "zipCode": "06000"
+                            },
+                            "_id": "64633b4e76bb673747dd7322",
+                            "date": "2023-05-16T09:30:00",
+                            "articles": [
+                                {
+                                    "vendeur": {
+                                        "nom": "Emma Thompson",
+                                        "email": "emmathompson@example.com",
+                                        "telephone": "0630303030"
+                                    },
+                                    "_id": "64633b58aad96045cbf8a320",
+                                    "reference": "SKU001",
+                                    "nom": "Snowboard freestyle",
+                                    "description": "A versatile snowboard for freestyle tricks",
+                                    "prix": 250,
+                                    "quantité": 1,
+                                    "etat": "neuf"
+                                },
+                                {
+                                    "vendeur": {
+                                        "nom": "Oliver Davis",
+                                        "email": "oliverdavis@example.com",
+                                        "telephone": "0640404040"
+                                    },
+                                    "_id": "64633b58aad96045cbf8a321",
+                                    "reference": "SKU002",
+                                    "nom": "Casque de ski",
+                                    "description": "A lightweight and protective ski helmet",
+                                    "prix": 75,
+                                    "quantité": 1,
+                                    "etat": "neuf"
+                                }
+                            ],
+                            "totalHT": 325,
+                            "fraisDePort": 15,
+                            "reduction": 10,
+                            "taxe": 20,
+                            "totalTTC": 350,
+                            "modePaiement": "carte de crédit",
+                            "statut": "pending"
+                        },
+                        {
+                            "acheteur": {
+                                "adresse": {
+                                    "rue": "456 Avenue des Sports",
+                                    "ville": "Marseille",
+                                    "pays": "France",
+                                    "zipCode": "13008"
+                                },
+                                "nom": "Maxime Dubois",
+                                "email": "maximedubois@example.com",
+                                "telephone": "0612233445"
+                            },
+                            "adresseLivraison": {
+                                "rue": "789 Rue du Skate",
+                                "ville": "Biarritz",
+                                "pays": "France",
+                                "zipCode": "64200"
+                            },
+                            "_id": "64633b4e76bb673747dd7323",
+                            "date": "2023-05-17T15:30:00",
+                            "articles": [
+                                {
+                                    "vendeur": {
+                                        "nom": "Lucie Dupont",
+                                        "email": "luciedupont@example.com",
+                                        "telephone": "0676543210"
+                                    },
+                                    "_id": "64633b58aad96045cbf8a322",
+                                    "reference": "SKU005",
+                                    "nom": "Skateboard électrique",
+                                    "description": "Un skateboard électrique performant et facile à utiliser",
+                                    "prix": 399,
+                                    "quantité": 1,
+                                    "etat": "neuf"
+                                }
+                            ],
+                            "totalHT": 399,
+                            "fraisDePort": 12,
+                            "reduction": 0,
+                            "taxe": 20,
+                            "totalTTC": 471.6,
+                            "modePaiement": "carte bancaire",
+                            "statut": "pending"
+                        },
+                        {
+                            "acheteur": {
+                                "adresse": {
+                                    "rue": "11 Rue des Sports Extremes",
+                                    "ville": "Grenoble",
+                                    "pays": "France",
+                                    "zipCode": "38000"
+                                },
+                                "nom": "Julie Martin",
+                                "email": "juliemartin@example.com",
+                                "telephone": "0622334455"
+                            },
+                            "adresseLivraison": {
+                                "rue": "123 Rue de la Montagne",
+                                "ville": "Chamonix",
+                                "pays": "France",
+                                "zipCode": "74400"
+                            },
+                            "_id": "64633b4e76bb673747dd7324",
+                            "date": "2023-05-18T10:00:00",
+                            "articles": [
+                                {
+                                    "vendeur": {
+                                        "nom": "Antoine Durand",
+                                        "email": "antoinedurand@example.com",
+                                        "telephone": "0687654321"
+                                    },
+                                    "_id": "64633b58aad96045cbf8a323",
+                                    "reference": "SKU007",
+                                    "nom": "Snowboard",
+                                    "description": "Un snowboard de qualité pour les passionnés de glisse",
+                                    "prix": 299,
+                                    "quantité": 1,
+                                    "etat": "occasion, quelques rayures"
+                                },
+                                {
+                                    "vendeur": {
+                                        "nom": "Pauline Girard",
+                                        "email": "paulinegirard@example.com",
+                                        "telephone": "0612345678"
+                                    },
+                                    "_id": "64633b58aad96045cbf8a324",
+                                    "reference": "SKU008",
+                                    "nom": "Fixations de snowboard",
+                                    "description": "Des fixations de qualité pour votre snowboard",
+                                    "prix": 79,
+                                    "quantité": 1,
+                                    "etat": "neuf"
+                                }
+                            ],
+                            "totalHT": 378,
+                            "fraisDePort": 15,
+                            "reduction": 10,
+                            "taxe": 19,
+                            "totalTTC": 402.22,
+                            "modePaiement": "virement bancaire",
+                            "statut": "pending"
+                        }
+                    ]
+                }
+              }
             }
           }
         },
